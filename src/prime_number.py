@@ -13,11 +13,12 @@ def nth_prime_number(index: int) -> int:
     """
     if index <= 0:
         return None
-    prime = [2]
     if index == 1:
-        return prime
-    number = prime[-1] 
-    while index > 1:
+        return 2
+    prime = {}
+    number = 1
+    key = 1
+    while key <= index:
         number += 1
         prime_flag = True
         for i in range(2, number):
@@ -26,8 +27,8 @@ def nth_prime_number(index: int) -> int:
                 prime_flag = False
                 break
         if prime_flag:
-            prime.append(number)
-            index -= 1
-    return prime[-1]
+            prime[key] = number
+            key += 1
+    return prime[index]
 
 print(nth_prime_number(10001))
