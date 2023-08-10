@@ -27,18 +27,31 @@ def prime_factorisation(num: int) -> list:
     """
     if num == 1:
         return [1]
-    factors = []
-    prime = 2
+    factors = []    # List to store Prime Factors
+    seen = {}   # To make sure only distinct factors are appended to list
+    prime = 2   # Start dividing by the first Prime Number
     while num != 1:
         if num % prime == 0:
             # Prime is a factor
-            factors.append(prime)
+            if prime not in seen:
+                factors.append(prime)
+                seen[prime] = True
             num = num / prime
         else:
             prime += 1
     return factors
 
-# for i in range(1, 16):
-#     print(f'The Prime Factors for {i} are {prime_factorisation(i)}')
+#for i in range(644, 647):
+#    print(f'The Prime Factors for {i} are {prime_factorisation(i)}')
 
+number = 1
+four_distinct_prime_factors = {}
 
+while len(four_distinct_prime_factors) < 4:
+    if len(prime_factorisation(number)) == 4:
+        if len(four_distinct_prime_factors) == 0:
+            four_distinct_prime_factors[number] = prime_factorisation(number)
+            print(f'The Prime Factors for {number} are {prime_factorisation(number)}')
+    number += 1
+
+print(four_distinct_prime_factors)
