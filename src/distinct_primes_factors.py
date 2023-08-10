@@ -13,7 +13,7 @@ Find the first four consecutive integers to have four distinct prime factors eac
 What is the first of these numbers?
 
 Design Thoughts:
-- One function to calculate prime numbers
+- One function to calculate prime factorisation of a number
     - Enhance the function to find if the prime numbers are four distinct
         - if yes, append it to a list or hashmap. 
             - After adding, check if there are more than one members in the list, if there are
@@ -21,3 +21,24 @@ Design Thoughts:
               empty the hashmap keys or list
             - once the list or hashmap grows to three 
 """
+def prime_factorisation(num: int) -> list:
+    """
+    This function should take a number input and return a list containing the distinct prime factors
+    """
+    if num == 1:
+        return [1]
+    factors = []
+    prime = 2
+    while num != 1:
+        if num % prime == 0:
+            # Prime is a factor
+            factors.append(prime)
+            num = num / prime
+        else:
+            prime += 1
+    return factors
+
+# for i in range(1, 16):
+#     print(f'The Prime Factors for {i} are {prime_factorisation(i)}')
+
+
