@@ -44,14 +44,28 @@ def prime_factorisation(num: int) -> list:
 #for i in range(644, 647):
 #    print(f'The Prime Factors for {i} are {prime_factorisation(i)}')
 
-number = 1
-four_distinct_prime_factors = {}
+NUM = 647
+UNIQUE = 4
+distinct_prime = {}
 
-while len(four_distinct_prime_factors) < 4:
-    if len(prime_factorisation(number)) == 4:
-        if len(four_distinct_prime_factors) == 0:
-            four_distinct_prime_factors[number] = prime_factorisation(number)
-            print(f'The Prime Factors for {number} are {prime_factorisation(number)}')
-    number += 1
 
-print(four_distinct_prime_factors)
+while len(distinct_prime) < UNIQUE:
+    if len(prime_factorisation(NUM)) == UNIQUE:
+        if len(distinct_prime) == 0:
+            # If hashmap empty, add the number as key and prime factorisation list as value
+            distinct_prime[NUM] = prime_factorisation(NUM)
+            #print(distinct_prime)
+        elif len(distinct_prime) > 0:
+            # If hashmap not empty, check if the existing key is one smaller than the current number
+            # if yes, then append existing key value into hashmap, otherwise empty the hashmap
+            PREV_NUM = NUM - 1
+            if PREV_NUM in distinct_prime:
+                distinct_prime[NUM] = prime_factorisation(NUM)
+                #print(distinct_prime)
+            else:
+                distinct_prime.clear()
+                distinct_prime[NUM] = prime_factorisation(NUM)
+                #print(distinct_prime)
+    NUM += 1
+
+print(distinct_prime)
