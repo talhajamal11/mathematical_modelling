@@ -5,21 +5,20 @@ Write the below algorithms to find the square root of a number:
 3. Bisection Method
 4. Secant Method
 """
-
-def square_root(number: float) -> float:
+def square_root(number: float, tolerance = 1e-2) -> float:
     """
     Simple way to calculate a square root of a number
     We want the answer to be close to an approximation
     """
-    approximation = 0.000001
     guess = number / 2
     i = 0
-    while abs(guess * guess - number) >= approximation:
+    while abs(guess * guess - number) >= tolerance:
         i += 1
         guess = (guess + number/guess) / 2
     return guess
 
-# print(format(square_root(484/79), '.15f'))
+print(format(square_root(37), '.15f'))
+
 
 def newton_raphson(function: float, derivative: float, x_0: float, tolerance = 1e-2) -> float:
     """
@@ -31,8 +30,25 @@ def newton_raphson(function: float, derivative: float, x_0: float, tolerance = 1
         return newton_raphson(function, derivative, x_1, tolerance)
     return x_1
 
-f = lambda x: x**3 - 100*x**2 -x + 100
-f_prime = lambda x: 3*x**2 + 100*x - 1
+f = lambda x: 37 - x**2
+f_prime = lambda x: -2*x
 
-print(format(newton_raphson(f, f_prime, 0), '.15f'))
+print(format(newton_raphson(f, f_prime, 6), '.15f'))
 
+
+def bisection(number:int, tolerance=1e-2) -> float:
+    """
+    Using a bisection technique to find the root
+    """
+    low = 0
+    high = max(1, number)
+    guess = (low + high) / 2
+    while abs(guess**2 - number) >= tolerance:
+        if guess**2 > number:
+            high = guess # update high
+        else:
+            low = guess # update low
+        guess = (low + high) / 2
+    return guess
+
+print(format(bisection(37), '.15f'))
