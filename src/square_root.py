@@ -5,7 +5,6 @@ Write the below algorithms to find the square root of a number:
 3. Bisection Method
 4. Secant Method
 """
-import numpy as np
 
 def square_root(number: float) -> float:
     """
@@ -32,11 +31,8 @@ def newton_raphson(function: float, derivative: float, x_0: float, tolerance = 1
         return newton_raphson(function, derivative, x_1, tolerance)
     return x_1
 
-# f = lambda x: x**2 -4*x - 7
-# f_prime = lambda x: 2*x -4
+f = lambda x: x**3 - 100*x**2 -x + 100
+f_prime = lambda x: 3*x**2 + 100*x - 1
 
-f = lambda x: 484/49 - x**2
-f_prime = lambda x: -2*x
+print(format(newton_raphson(f, f_prime, 0), '.15f'))
 
-print(format(newton_raphson(f, f_prime, 22/7), '.15f'))
-print(format(np.sqrt(484/49), '.15f'))
