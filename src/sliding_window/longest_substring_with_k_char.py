@@ -1,30 +1,28 @@
 """
 
-
 """
+
+import collections
 
 def total_fruit(fruits: list) -> int:
     """
     Find longest subarray with 2 distinct numbers
     """
-    left, right = 0, 0
-    seen = {}
-    max_length = 0
-    #for right, fruit in enumerate(fruits):
-    while right < len(fruits):
-        fruit = fruits[right]
-        if fruit not in seen and len(seen) <= 1:
-            seen[fruit] = True
-            max_length = max(max_length, right - left + 1)
-            right += 1
-        elif fruit in seen:
-            max_length = max(max_length, right - left + 1)
-            right += 1
-        else:
+    basket = collections.defaultdict(int)
+    left, total, result = 0, 0, 0
+    for right, fruit in enumerate(fruits):
+        basket[fruit] += 1
+        total += 1
+        while len(basket) > 2:
+            f = fruits[left]
+            basket[f] -= 1
+            total -= 1
             left += 1
-            right = left
-            seen = {}
-    return max_length
+            if not basket[f]:
+                basket.pop(f)
+        result = max(result, total)
+    return result
+
 
 values = [0,1,6,6,4,4,6]
 print(total_fruit(values))
