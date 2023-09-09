@@ -2,7 +2,7 @@
 Find the length of the longest substring in a string without repeating characters
 """
 
-phrase = "abcbbaadvbc"
+phrase = "abcdefghabcdefgh"
 
 def longest_without_repeating(word: str) -> any:
     """
@@ -10,9 +10,20 @@ def longest_without_repeating(word: str) -> any:
     and the length of it
     """
     left = 0
-    right = 1
-    length = 0
+    length, max_length = 0, 0
     seen = {} # hashmap for characters
-    while right < len(word):
+    for right, char in enumerate(word):
         # Iterate from left all the way to the right
-        
+        if char not in seen:
+            # push to dictionary
+            seen[char] = True
+            length = len(word[left:right + 1])
+            max_length = max(max_length, length)
+        elif char in seen:
+            # found duplicate
+            left = right
+            seen = {}
+            seen[char] = True
+    return max_length
+
+print(longest_without_repeating(phrase))
