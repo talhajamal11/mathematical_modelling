@@ -15,7 +15,6 @@ def longestOnes(nums: list, k: int) -> int:
     for right, number in enumerate(nums):
         count[number] = 1 + count.get(number, 0)
         if ((right - left + 1) - (count.get(1, 0))) > k:
-            # Invalid condition - fix it till valid
             count[nums[left]] -= 1
             left += 1
         length = max(length, right - left + 1)
