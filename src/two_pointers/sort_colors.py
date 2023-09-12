@@ -12,24 +12,31 @@ def sort_colors(nums: list) -> None:
     """
     Do not return anything, modify nums in-place instead.
     """
+    # use pointers 
     # base case
     if len(nums) == 0 or len(nums) == 1:
         return
-    start = 0 # Place all 0s to start
-    end = len(nums) - 1 # Place all 2s to end
+    left = 0 # put all 0s to the left position and increment left
+    right = len(nums) - 1 #put all 2s to the right most position and decrement right
     index = 0
-    while index <= end and start < end:
+    while index <= right and left < right:
+        # iterate through whole array till you reach right
+        # or left and right are the same
         if nums[index] == 0:
-            nums[index] = nums[start]
-            nums[start] = 0
-            start += 1
+            # Move the current index value to the left index position
+            # Assign 0 to the left index
+            nums[index] = nums[left]
+            nums[left] = 0
+            left += 1
         if nums[index] == 2:
-            nums[index] = nums[end]
-            nums[end] = 2
-            end -= 1
+            nums[index] = nums[right]
+            nums[right] = 2
+            right -= 1
         else:
+            # num is a 1
             index += 1
     return
+
 
 numbers = [2,0,1]
 print(sort_colors(numbers))
