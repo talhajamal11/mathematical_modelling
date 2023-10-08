@@ -40,3 +40,23 @@ each element of array A is an integer within the range [−1,000..1,000].
 In your solution, focus on correctness. The performance of your solution will 
 not be the focus of the assessment.
 """
+
+def rotate_array(A, K):
+    """
+    Shift array elements by K
+    [1,2,3,4]
+    [4,1,2,3]
+    """
+    right = 0 + K
+    left = 0
+
+    for i in range(len(A) - K):
+        if right > len(A):
+            right -= len(A)
+        else:
+            A[left], A[right] = A[right], A[left]
+            right += 1
+    print(A)
+    return A
+
+rotate_array([1,2,3,4], 2)
