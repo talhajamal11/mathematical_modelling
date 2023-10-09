@@ -1,27 +1,23 @@
 """
 Buy Low Sell High
 """
-prices = [1, 5, 3, 1, 8]
-
 def max_profit(array: list) -> any:
     """
     Returns Buy Date, Sell Date, and max profit
     """
-    left, right = 0, 1 # left = buy, right = sell
-    profit = 0
-    buy, sell = 0, 0
+    left, right = 0, 1
+    profit, max_profit = 0, 0
     while right < len(array):
-        # Check for max profit
+        # iterate over whole array
         if array[left] < array[right]:
             # profitable
-            # is current profit higher than existing profit?
-            profit = max(profit, array[right] - array[left])
-            buy = array[left]
-            sell = array[right]
-        elif array[right] < array[left]:
-            # current price is lower - buy low
+            profit = array[right] - array[left]
+            max_profit = max(max_profit, profit)
+        else:
+            # not profitable
             left = right
         right += 1
-    return profit, buy, sell
+    return max_profit
 
+prices = [1, 5, 3, 1, 8]
 print(max_profit(prices))

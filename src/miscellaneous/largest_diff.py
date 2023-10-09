@@ -23,7 +23,6 @@ def largest_diff(numbers: list):
 
         if numbers[left] < numbers[right]:
             
-        
-    
+
 numbers = [random.randint(1, 10) for _ in range(10)]
 print(numbers, max(numbers) - min(numbers))
