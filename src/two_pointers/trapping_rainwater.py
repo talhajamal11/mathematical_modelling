@@ -3,11 +3,11 @@ Given n non-negative integers representing an elevation map where the width of e
 compute how much water it can trap after raining.
 """
 
-def trap_water(heights:list) -> int:
+def trap_water(height:list) -> int:
     """
     Return Integer
     """
-    left, right = 0, len(heights) - 1
+    left, right = 0, len(height) - 1
     left_max, right_max, water = 0, 0, 0
     while left < right:
         if height[left] < height[right]: # can contain water
