@@ -18,6 +18,5 @@ def max_sub_array(numbers):
             total = 0
     return max_total, numbers[left: end + 1]
 
-
 nums = [-2,1,-3,4,-1,2,1,-5,4]
 print(max_sub_array(nums))
