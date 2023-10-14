@@ -18,7 +18,6 @@ def two_sum_two(nums: list, target: int) -> list:
     return list with 1 add to indexes
     """
     result = []
-
     left = 0
     right = len(nums) - 1
     while left < right:
