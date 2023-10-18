@@ -47,6 +47,8 @@ def lcm_multiple_numbers(numbers: list) -> int:
         result = lcm(result, numbers[i])
     return result
 
-arr = [i for i in range(1, 21)]
-print(arr)
-print(lcm_multiple_numbers(arr))
+#arr = [i for i in range(1, 21)]
+#print(arr)
+#print(lcm_multiple_numbers(arr))
+
+print(greatest_common_divisor(30, 50))
