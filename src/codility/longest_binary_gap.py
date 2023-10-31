@@ -17,8 +17,8 @@ The function should return 0 if N doesn't contain a binary gap.
 def binary_rep(number):
     return bin(number)[2:]
 
-def binary_gap(number):
-    binary_num = binary_rep(number)
+def binary_gap(N):
+    binary_num = bin(N)[2:]
     length, max_length = 0, 0
     left = 0
     for right in range(len(binary_num)):
