@@ -1,0 +1,28 @@
+country,measure,definition,date_start,date_end
+France,MasksMandatoryAllSpaces,Mask mandate in all spaces,2020-10-28,2021-06-16
+France,PlaceOfWorship,Places or worship closed (full or partial),2020-10-28,2021-06-30
+France,QuarantineForArrivals,Quarantine for int. travellers (full or partial),2021-06-09,NaT
+France,StayAtHome,Stay at home order (binding or non-binding),2020-03-17,2020-05-11
+France,StayAtHome,Stay at home order (binding or non-binding),2020-10-28,2020-12-14
+Germany,PlaceOfWorship,Places or worship closed (full or partial),2020-12-16,2021-05-31
+Germany,QuarantineForArrivals,Quarantine for int. travellers (full or partial),2020-02-14,2020-06-15
+Germany,QuarantineForArrivals,Quarantine for int. travellers (full or partial),2020-11-08,2021-05-11
+Germany,QuarantineForArrivals,Quarantine for int. travellers (full or partial),2020-06-16,2020-11-07
+Germany,QuarantineForArrivals,Quarantine for int. travellers (full or partial),2021-05-12,NaT
+Germany,StayAtHome,Stay at home order (binding or non-binding),2020-03-17,2020-05-05
+Italy,MasksMandatoryAllSpaces,Mask mandate in all spaces,2020-04-26,2020-07-14
+Italy,MasksMandatoryAllSpaces,Mask mandate in all spaces,2020-10-08,2021-06-27
+Italy,PlaceOfWorship,Places or worship closed (full or partial),2020-03-10,2020-06-15
+Italy,QuarantineForArrivals,Quarantine for int. travellers (full or partial),2020-03-04,2020-03-10
+Italy,QuarantineForArrivals,Quarantine for int. travellers (full or partial),2020-06-12,2021-04-30
+Italy,StayAtHome,Stay at home order (binding or non-binding),2020-10-26,2020-11-04
+Italy,StayAtHome,Stay at home order (binding or non-binding),2020-03-10,2020-05-04
+Switzerland,MasksMandatoryAllSpaces,Mask mandate in all spaces,2020-07-06,2021-06-25
+Switzerland,QuarantineForArrivals,Quarantine for int. travellers (full or partial),2020-07-06,NaT
+Switzerland,StayAtHome,Stay at home order (binding or non-binding),2020-12-22,2021-01-22
+United Kingdom,PlaceOfWorship,Places or worship closed (full or partial),2020-03-24,2020-05-18
+United Kingdom,QuarantineForArrivals,Quarantine for int. travellers (full or partial),2020-01-01,2020-03-14
+United Kingdom,QuarantineForArrivals,Quarantine for int. travellers (full or partial),2020-06-08,2020-06-29
+United Kingdom,QuarantineForArrivals,Quarantine for int. travellers (full or partial),2020-11-06,NaT
+United Kingdom,StayAtHome,Stay at home order (binding or non-binding),2020-03-16,2020-05-09
+United Kingdom,StayAtHome,Stay at home order (binding or non-binding),2020-11-05,2020-12-01
