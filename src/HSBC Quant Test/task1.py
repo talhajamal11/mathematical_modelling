@@ -1,22 +1,8 @@
 """ 
-smallest string
-print(ord('a'))
-print(ord('b'))
+Write a function solution that given a string S consisting of N characters, returns the alphabetically smallest string
+that can be obtained by removing exactly one letter from S.
 
-if 'a' > 'b':
-    print('False')
-else:
-    print("True")
-"""
-
-string = "eeeeea"
-
-"""
-def smallest_string(text):
-    res = ""
-    length = len(text)
-    for i in range(length - 1):
-        if (text[i] > text[i + 1]):
+1. S = "acb". You can obtain "ac", "ab", "cb". Your function should return "ab" since it is the smallest. 
 """
 
 def solution(s):
@@ -33,4 +19,14 @@ def optimal_solution(s):
             return s[:i] + s[i + 1:]
     return s[:-1]
 
-print(optimal_solution(string))
+#print(optimal_solution(string))
+
+def new_solution(s):
+    # acb -> ab
+    res = ""
+    for i in range(len(s) - 1):
+        if s[i] > s[i + 1]:
+            return s[:i] + s[i+1:]
+    return s[:-1]
+
+print(new_solution("hotty"))
