@@ -50,7 +50,6 @@ from collections import defaultdict
 
 def solution(S, K):
     letter_count = {}
-
     for s in S:
         unique_letters = {}
         for c in s:
@@ -69,7 +68,6 @@ def solution(S, K):
         else:
             result += K
             break
-    
     return result
 
 

@@ -21,4 +21,5 @@ def is_possible(a,b,c,d):
         return "No"
 
 
-print(is_possible(2,2,1000,998))
+#print(is_possible(2,2,1000,998))
+

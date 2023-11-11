@@ -6,14 +6,12 @@ def solution(S):
     hashmap = {}
     for i in range(len(S)):
         hashmap[S[i]] = 1 + hashmap.get(S[i], 0)
-
     for digit in dig:
         try:
             c = hashmap[digit]
         except:
             continue
         length = len(answer)
-
         if length % 2 == 0:
             if c > 0:
                 answer = answer[: length // 2] + [digit] * c + answer[length // 2:]
@@ -24,7 +22,6 @@ def solution(S):
             else:
                 if c >= 2:
                     answer = answer[:length // 2] + [digit] * (c // 2) + [answer[length // 2]] + [digit] * (c // 2) + answer[length // 2 + 1:]
-        
     res = ''.join(answer).lstrip('0')
     return res if res else '0'
 
