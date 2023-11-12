@@ -14,12 +14,22 @@ def gcd(num1, num2):
     return num1
 
 def is_possible(a,b,c,d):
-    print(gcd(a,b), gcd(c,d))
     if gcd(a,b) == gcd(c,d):
         return "Yes"
     else:
         return "No"
 
 
-#print(is_possible(2,2,1000,998))
+print(is_possible(2,2,1000,998))
 
+def solution(a,b,c,d):
+    while c > 0 and d > 0:
+        if (c,d) == (a,b):
+            return True
+        if c > d:
+            c %= d
+        else:
+            d %= c
+    return False
+
+print(solution(2,2,1000,998))

@@ -18,6 +18,5 @@ def solution(i, j, k):
     sum2 = helper(j-1) - helper(k-1)
     return int(sum1+sum2)
 
-print(solution(-5,5,-5))
-
-#print(seq_summation(-5,0,-5))
+print(solution(-5,10,-9))
+print(seq_summation(-5,10,-9))
