@@ -33,4 +33,19 @@ x0 = [2e6, 0, 90]
 # Test the defined ODEs
 # print(odes(x=x0, t=0))
 
+# Declar a Time Vector (time window)
+t = np.linspace(start=0, stop=15, num=1000)
+x = odeint(odes, x0, t)
 
+# ODEint returns a matrix x which has the solutions to the 
+# different variables
+A = x[:, 0]
+B = x[:, 1]
+C = x[:, 2]
+
+# Plot
+plt.semilogy(t, A, label='A')
+plt.semilogy(t, B, label='B')  
+plt.semilogy(t, C, label='C')  
+plt.legend()
+plt.show()
